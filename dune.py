@@ -5,6 +5,7 @@ import os
 import pathlib
 import requests
 import subprocess
+import sys
 import time
 
 load_dotenv()
@@ -16,7 +17,7 @@ def cryo(table, start_block, end_block, chunk_size):
     'logs': ['block_number', 'block_hash', 'address', 'topic0', 'topic1', 'topic2', 'topic3', 'data', 'transaction_hash', 'log_index', 'transaction_index']
   }
 
-  subprocess.run(['cryo',
+  subprocess.run(['/home/ubuntu/.cargo/bin/cryo' if '--crontab' in sys.argv else 'cryo',
     '--rpc', 'https://rpc.degen.tips/http',
     '--chunk-size', str(chunk_size),
     '--output-dir', 'output', '--overwrite', '--json', '--no-report',
