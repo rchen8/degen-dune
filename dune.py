@@ -18,7 +18,7 @@ def cryo(table, start_block, end_block, chunk_size):
   }
 
   subprocess.run(['/home/ubuntu/.cargo/bin/cryo' if '--crontab' in sys.argv else 'cryo',
-    '--rpc', 'https://rpc.degen.tips/http',
+    '--rpc', 'https://rpc.degen.tips',
     '--chunk-size', str(chunk_size),
     '--output-dir', 'output', '--overwrite', '--json', '--no-report',
     table, '--blocks', '%d:%d' % (start_block, end_block),
