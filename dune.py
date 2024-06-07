@@ -144,7 +144,7 @@ def get_end_block():
 
 ####################################################################################################
 
-chunk_size = 10000
+chunk_size = 1000
 start_block = get_start_block()
 end_block = get_end_block()
 print(start_block, end_block)
